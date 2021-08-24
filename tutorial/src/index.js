@@ -1,4 +1,4 @@
-// import React from 'react'; - od wersji 17 nie ma konieczności importowania Reacta
+// import React from 'react'; //- od wersji 17 nie ma konieczności importowania Reacta
 import ReactDom from 'react-dom';
 
 // JSX rules:
@@ -30,6 +30,5 @@ function Greeting() {
     );
 }
 
+export default Greeting
 ReactDom.render(<Greeting />, document.getElementById('root'));
-
-// tagi trzeba zawsze zamykać jak powyżej albo jak w HTML 5 <Greeting></Greeting>

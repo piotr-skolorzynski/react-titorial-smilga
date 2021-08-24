@@ -3,17 +3,28 @@ import ReactDom from 'react-dom';
 
 //nested components and react tools
 
-function Greeting() {
+function BookList() {
     return (
-        <div>
-            <Person />
-            <Message />
-        </div>
+        <section>
+            <Book />
+        </section>
     );
 }
 
-const Person = () => <h2>piotr skołorzyński</h2>;
+const Book = () => {
+    return (
+        <article>
+            <Image />
+            <Title />
+            <Author />
+        </article>
+    )
+}
 
-const Message = () => <p>this is my message</p>;
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/51rExxvZB+L._SX315_BO1,204,203,200_.jpg" alt="book" />;
 
-ReactDom.render(<Greeting />, document.getElementById('root'));
+const Title = () => <h1>Elantris: wydanie specjalne Twarda oprawa</h1>;
+
+const Author = () => <h4>Brandon Sanderson</h4>;
+
+ReactDom.render(<BookList />, document.getElementById('root'));

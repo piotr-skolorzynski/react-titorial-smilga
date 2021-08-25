@@ -33,6 +33,7 @@ const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/5
 
 const Title = () => <h1>Elantris: wydanie specjalne Twarda oprawa</h1>;
 
-const Author = () => <h4>Brandon Sanderson</h4>;
+//poniżej przykład wstawiania inlinowego stylu , jest to widoczne na stronie, wpisuje się to jak obiekt bo działamy w javascripcie oraz obowiązuje camelCase jak w vanilli
+const Author = () => <h4 style={{color:'#617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>Brandon Sanderson</h4>;
 
 ReactDom.render(<BookList />, document.getElementById('root'));

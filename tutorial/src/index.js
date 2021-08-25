@@ -10,11 +10,15 @@ import './index.css';
 function BookList() {
     return (
         <section className="booklist">
+            {/* props przekazujemy przy renderowaniu komponentu */}
             <Book 
                 img={ firstBook.img } 
                 title={ firstBook.title } 
                 author={ firstBook.author }
-            /> {/* props przekazujemy przy renderowaniu komponentu */}
+            >   
+                <h1>recenzja</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate vel dolore laudantium! Similique deserunt architecto possimus consequatur veritatis repellendus, at inventore, voluptatem tempora corrupti blanditiis dolorem dolorum corporis laborum debitis!</p> {/* ten paragraf to nasze children wewnątrz komponentu */}
+            </Book>
             <Book 
                 img={ secondBook.img } 
                 title={ secondBook.title } 
@@ -40,19 +44,30 @@ const secondBook = {
 
 //PAMIĘTAJ przekazujemy w JSX coś co zawsze zwaraca wartość (expression) np. {6+6}, dlatego nie można przekazać np. czegoś takiego { let x = 6} czyli statement
 
+//wykorzystanie destrukturyzacji + zagnieżdżanie dzieci (poprzez słowo kluczowe children) podanych w komponencie
 
-
-//wykorzystanie destrukturyzacji - pierwszy sposób (bardziej popularny)
-
-const Book = ({ img, title, author }) => {
+const Book = ({ img, title, author, children }) => {
     return (
         <article className="book">
             <img src={ img } alt="book" />
             <h1>{ title }</h1>
             <h4>{ author }</h4>
+            { children }
         </article>
     )
 }
+
+// //wykorzystanie destrukturyzacji - pierwszy sposób (bardziej popularny)
+
+// const Book = ({ img, title, author }) => {
+//     return (
+//         <article className="book">
+//             <img src={ img } alt="book" />
+//             <h1>{ title }</h1>
+//             <h4>{ author }</h4>
+//         </article>
+//     )
+// }
 
 //wykorzystanie destrukturyzacji - drugi sposób
 

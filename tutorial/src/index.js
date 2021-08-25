@@ -40,17 +40,46 @@ const secondBook = {
 
 //PAMIĘTAJ przekazujemy w JSX coś co zawsze zwaraca wartość (expression) np. {6+6}, dlatego nie można przekazać np. czegoś takiego { let x = 6} czyli statement
 
-const Book = (props) => {
-        console.log(props);
 
+
+//wykorzystanie destrukturyzacji - pierwszy sposób (bardziej popularny)
+
+const Book = ({ img, title, author }) => {
     return (
         <article className="book">
-            <img src={ props.img } alt="book" />
-            <h1>{ props.title }</h1>
-            <h4>{ props.author }</h4>
+            <img src={ img } alt="book" />
+            <h1>{ title }</h1>
+            <h4>{ author }</h4>
         </article>
     )
 }
+
+//wykorzystanie destrukturyzacji - drugi sposób
+
+// const Book = (props) => {
+//     const { img, title, author } = props; //dokonujemy destrukturyzacji, możemy wybrać sobie jakie klucze z obiektu nas interesują w tym komponencie
+
+//     return (
+//         <article className="book">
+//             <img src={ img } alt="book" />
+//             <h1>{ title }</h1>
+//             <h4>{ author }</h4>
+//         </article>
+//     )
+// }
+
+
+// const Book = (props) => {
+//         console.log(props);
+
+//     return (
+//         <article className="book">
+//             <img src={ props.img } alt="book" />
+//             <h1>{ props.title }</h1>
+//             <h4>{ props.author }</h4>
+//         </article>
+//     )
+// }
 
 ReactDom.render(<BookList />, document.getElementById('root'));
 

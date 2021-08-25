@@ -16,28 +16,35 @@ const books = [
         img: 'https://images-na.ssl-images-amazon.com/images/I/81cJzGY%2BJJL._AC_UL200_SR200,200_.jpg',
         title: 'Leadership without easy answers',
         author: 'Ronald A. Heifetz'
+    },
+    {
+        img: 'https://images-na.ssl-images-amazon.com/images/I/91CV8GppfYL._AC_UL200_SR200,200_.jpg',
+        title: 'Berserk Deluxe Edition HC 08',
+        author: 'Kentaro Mira'
     }
 ]
 
-const names = ['john', 'peter', 'susan'];
 //przykład wykorzystania metody map do stworzenia elementów listy
-const newNames = names.map(name => <h1>{ name }</h1>);
+// const names = ['john', 'peter', 'susan'];
+// const newNames = names.map(name => <h1>{ name }</h1>);
 
 function BookList() {
     return (
         <section className="booklist">
-            {newNames}
+            { books.map(book => {
+                return <Book book={book} />
+            })}
         </section>
     );
 }
 
-const Book = ({ img, title, author, children }) => {
+const Book = props => {
+    const { img, title, author } = props.book;
     return (
         <article className="book">
             <img src={ img } alt="book" />
             <h1>{ title }</h1>
             <h4>{ author }</h4>
-            { children }
         </article>
     )
 }

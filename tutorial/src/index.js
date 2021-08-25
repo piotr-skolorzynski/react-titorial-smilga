@@ -1,11 +1,19 @@
 // import React from 'react'; //- od wersji 17 nie ma konieczności importowania Reacta
 import ReactDom from 'react-dom';
 
+//importing css
+import './index.css';
+
 //nested components and react tools
 
 function BookList() {
     return (
-        <section>
+        <section className="booklist">
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
             <Book />
         </section>
     );
@@ -13,7 +21,7 @@ function BookList() {
 
 const Book = () => {
     return (
-        <article>
+        <article className="book">
             <Image />
             <Title />
             <Author />
